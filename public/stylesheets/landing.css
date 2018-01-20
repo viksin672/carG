@@ -1,0 +1,116 @@
+body {
+  background-color: #000;
+}
+
+  #landing-header {
+  z-index: 1;
+  position: relative;
+  text-align: center;
+  padding-top: 20vh;
+}
+
+#landing-header h1 {
+  color: #fff;
+}
+
+
+
+.slideshow {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.slideshow li {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  opacity: 0;
+  z-index: 0;
+  animation: imageAnimation 50s linear infinite;
+}
+
+.slideshow li:nth-child(1) {
+  background-image: url(https://wallpaperscraft.com/image/1931_stutz_dv32_convertible_victoria_rollston_luxury_99112_1920x1080.jpg)
+}
+.slideshow li:nth-child(2) {
+  background-image: url(https://wallpaperscraft.com/image/porsche_911_turbo_997_black_front_sun_grass_reflections_94733_1920x1080.jpg);
+  animation-delay: 10s;
+}
+.slideshow li:nth-child(3) {
+  background-image: url(https://wallpaperscraft.com/image/toyota_gt86_rear_view_evening_105093_1920x1080.jpg);
+  animation-delay: 20s;
+}
+.slideshow li:nth-child(4) {
+  background-image: url(https://1.bp.blogspot.com/-ttdB6NsUg7s/T-WWs9oby-I/AAAAAAAAJs4/4gfSB2E1fdU/s1366/amazing-car-wallpaper-1.jpg);
+  animation-delay: 30s;
+}
+.slideshow li:nth-child(5) {
+  background-image: url(http://www.autodatz.com/wp-content/uploads/2017/05/Hd-Wallpapers-Of-New-Cars-15-with-Hd-Wallpapers-Of-New-Cars.jpg);
+  animation-delay: 40s;
+}
+
+
+
+@keyframes imageAnimation {
+  0% {
+    opacity: 0;
+    animation-timing-function: ease-in;
+  }
+  10% {
+    opacity: 1;
+    animation-timing-function: ease-out;
+  }
+  20% {
+    opacity: 1
+  }
+  30% {
+    opacity: 0
+  }
+}
+
+
+
+/* Older browser support - .no-cssanimations class added by modernizr */
+.no-cssanimations .slideshow li {
+	opacity: 1;
+}
+
+
+/*carg*/
+
+@import url(https://fonts.googleapis.com/css?family=Wire+One);
+
+body {
+
+  font-family: 'Wire One', Helvetica, Arial, sans-serif;
+  font-size: 100px;
+}
+
+.neon {
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+  text-shadow: 0 0 10px black, 0 0 15px black;
+}
+
+.info {
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+  text-shadow: 0 0 10px black, 0 0 15px black;
+  font-size: 20px;
+}

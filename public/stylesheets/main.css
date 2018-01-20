@@ -1,0 +1,41 @@
+
+p{
+  color: white;
+
+}
+h2{
+  color:white;
+  font: italic 1.2em "Fira Sans", serif;
+}
+.thumbnail img {
+    width: 100%;
+}
+
+.thumbnail {
+    padding: 0;
+    background: black;
+}
+
+.thumbnail .caption-full {
+    padding: 9px;
+}
+
+#delete-form {
+    display: inline;
+}
+
+
+.jumbotron {
+    margin-bottom: 0px;
+    background-image: url(https://www.hdwallpapers.in/download/chevrolet_camaro_muscle_car-3840x2160.jpg);
+    background-position: 0% 25%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color:#000411;
+    text-shadow: black 0.3em 0.3em 0.3em;
+
+}
+
+#pol{
+  font-size: 30px;
+}

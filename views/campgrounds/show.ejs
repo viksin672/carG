@@ -1,0 +1,194 @@
+<% include ../partials/header %>
+
+
+
+<div class="container">
+    <div class="row">
+        <!-- <div class="col-md-3">
+            <p class="lead">YelpCamp</p>
+            <div class="list-group">
+                <li class="list-group-item active">Info 1</li>
+                <li class="list-group-item">Info 2</li>
+                <li class="list-group-item">Info 3</li>
+            </div>
+        </div> -->
+        <div >
+            <div class="thumbnail">
+                <img class="img-responsive" src="<%= campground.image %>">
+                <div class="caption-full">
+
+                    <h1 style="color:#002d82;"><a><%=campground.name%></a></h1>
+                    <p style="color:white";><%- campground.description %></p>
+                      <p><%- campground.description1 %></p>
+
+                  </div>
+            </div>
+  <h2>Gallery:</h2>
+  <div class="ui medium images" >
+   <img src="<%= campground.image1 %>">
+   <img src="<%= campground.image2 %>">
+   <img src="<%= campground.image3 %>">
+   <img src="<%= campground.image4 %>">
+   <img src="<%= campground.image5 %>">
+   <img src="<%= campground.image6 %>" >
+   <img src="<%= campground.image7 %>" >
+   <img src="<%= campground.image8 %>" >
+   <img src="<%= campground.image9 %>" >
+ </div>
+
+ <hr>
+
+<h2>ENGINE</h2>
+ <table class="ui selectable inverted table">
+  <thead>
+    <tr>
+      <th>TYPE</th>
+
+      <th class="right aligned"><%- campground.type %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>DISPLACEMENT</td>
+
+      <td class="right aligned"><%- campground.displacement %></td>
+    </tr>
+    <tr>
+      <td>BORE x STROKE</td>
+
+      <td class="right aligned"><%- campground.borexstroke %></td>
+    </tr>
+    <tr>
+      <td>COMPRESSION RATIO</td>
+
+      <td class="right aligned"><%- campground.compression %></td>
+    </tr>
+    <tr>
+      <td>MAX. POWER</td>
+
+      <td class="right aligned"><%- campground.maxpower %></td>
+    </tr>
+    <tr>
+      <td>MAX. TORQUE</td>
+
+      <td class="right aligned"><%- campground.maxtorque %></td>
+    </tr>
+  </tbody>
+</table>
+
+<hr>
+<h2>TRANSMISSION </h2>
+
+<table class="ui selectable inverted table">
+ <thead>
+   <tr>
+     <th>TRANSMISSION TYPE</th>
+
+     <th class="right aligned"><%- campground.transmissiontype %></th>
+   </tr>
+ </thead>
+ <tbody>
+   <tr>
+     <td>GEARBOX</td>
+
+     <td class="right aligned"><%- campground.gearbox %></td>
+   </tr>
+ </tbody>
+ </table>
+
+<hr>
+<h2>PERFORMANCE</h2>
+ <table class="ui selectable inverted table">
+  <thead>
+    <tr>
+      <th> MAX. SPEED</th>
+
+      <th class="right aligned"><%- campground.maxspeed %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> ACCELERATION</td>
+
+      <td class="right aligned"><%- campground.acceleration %></td>
+    </tr>
+  </tbody>
+  </table>
+
+
+  <h2>WHEELS</h2>
+   <table class="ui selectable inverted table">
+    <thead>
+      <tr>
+        <th>RIMS</th>
+
+        <th class="right aligned"><%- campground.rimf %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>RIMS</td>
+
+        <td class="right aligned"><%- campground.rimr %></td>
+      </tr>
+      <tr>
+        <td>TIRES</td>
+
+        <td class="right aligned"><%- campground.tiref %></td>
+      </tr>
+      <tr>
+        <td>TIRES</td>
+
+        <td class="right aligned"><%- campground.tirer %></td>
+      </tr>
+
+    </tbody>
+  </table>
+  <hr>
+
+
+
+<a href="/campgrounds" class="pull-right">Go back</a>
+
+
+
+
+
+
+
+
+            <h2>What U Say!!:</h2>
+            <div class="well" style="background:#212326;">
+                <div class="text-right">
+                    <a class="btn btn-success" href="/campgrounds/<%= campground._id %>/comments/new">Add Comment</a>
+                </div>
+                <hr>
+                <% campground.comments.forEach(function(comment){ %>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <strong style="color:white;"><%= comment.author.username %></strong>
+                            <div class="meta">
+            <span class="pull-right" style="color:white;"><%=comment.created.toDateString()%></span>
+          </div>
+                            <p>
+                                <%= comment.text %>
+                            </p>
+                        <% if(currentUser && comment.author.id.equals(currentUser._id)){ %>
+                            <a class="btn btn-xs btn-warning"
+                               href="/campgrounds/<%=campground._id %>/comments/<%=comment._id %>/edit">Edit</a>
+                            <form id="delete-form" action="/campgrounds/<%=campground._id %>/comments/<%=comment._id %>?_method=DELETE" method="POST">
+                                <input type="submit" class="btn btn-xs btn-danger" value="Delete">
+                            </form>
+                        <% } %>
+                        </div>
+                    </div>
+                    <hr>
+                <% }) %>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<% include ../partials/footer %>
