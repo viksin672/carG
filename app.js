@@ -17,8 +17,8 @@ var seedDB     = require("./seeds");
 //requiring routes
 
 seedDB();
-mongoose.connect("mongodb://localhost/carg", {useMongoClient: true});
-
+// mongoose.connect("mongodb://localhost/carg", {useMongoClient: true});
+mongoose.connect("mongodb://<vivek>:<viveksingh1!>@ds111078.mlab.com:11078/carg", {useMongoClient: true});
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
