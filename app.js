@@ -18,7 +18,7 @@ var seedDB     = require("./seeds");
 
 seedDB();
 // mongoose.connect("mongodb://localhost/carg", {useMongoClient: true});
-mongoose.connect("mongodb://<vivek>:<viveksingh1!>@ds111078.mlab.com:11078/carg", {useMongoClient: true});
+mongoose.connect("mongodb://vivek:viveksingh1!@ds111078.mlab.com:11078/carg", {useMongoClient: true});
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
@@ -28,7 +28,7 @@ app.use(flash());
 
 // PASSPORT CONFIGURATION
 app.use(require("express-session")({
-    secret: "Once again Rusty wins cutest dog!",
+    secret: "Once again you wins!",
     resave: false,
     saveUninitialized: false
 }));
